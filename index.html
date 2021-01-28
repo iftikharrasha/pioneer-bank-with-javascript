@@ -25,21 +25,21 @@
                 <div class="col-md-4">
                     <div class="deposit status">
                         <h5>Deposit</h5>
-                        <h2>$ <span id="current-deposite">00</span></h2>
+                        <h2>$ <span id="current-deposit">00</span></h2>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="withdraw status">
                         <h5>Withdraw</h5>
-                        <h2>$00</h2>
+                        <h2>$ 00</h2>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="balance status">
                         <h5>Balance</h5>
-                        <h2>$1240</h2>
+                        <h2>$ <span id="current-balance">1240</span></h2>
                     </div>
                  </div>
             </div>
@@ -82,16 +82,34 @@
             const deposit_amount = document.getElementById('deposit-amount').value;
             const depositStringToInt = parseFloat(deposit_amount);
 
-            //adding old deposite with current
-            const current_deposite = document.getElementById("current-deposite").innerText;
-            const currentStringToInt = parseFloat(current_deposite);
+            //x1.1 adding old deposite with current
+            // const current_deposite = document.getElementById("current-deposite").innerText;
+            // const currentStringToInt = parseFloat(current_deposite);
 
-            const totalDeposit = currentStringToInt + depositStringToInt;
+            // const totalDeposit = currentStringToInt + depositStringToInt;
 
-            //setting this value in deposite
-            document.getElementById("current-deposite").innerText = totalDeposit;
+            // //x1.2 setting this value in deposite
+            // document.getElementById("current-deposite").innerText = totalDeposit;
+            //without repeating this we can do this with function
+
+            updateSpanTest("current-deposit", depositStringToInt);
+            updateSpanTest("current-balance", depositStringToInt);
+
+            //setting up the input field blank when clicked
             document.getElementById('deposit-amount').value = "";
+
         })
+
+        function updateSpanTest(idName, addedNumber){
+             //x1.1 updating balance the same way
+             const current = document.getElementById(idName).innerText;
+             const currentStringToInt = parseFloat(current);
+
+             const total = currentStringToInt + addedNumber;
+
+              //x1.2 setting this value in balance
+              document.getElementById(idName).innerText = total;
+        }
     </script>
 </body>
 </html>
