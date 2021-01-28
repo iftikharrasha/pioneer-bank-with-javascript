@@ -19,11 +19,60 @@
         </div>
     </div>
 
+    <div id="account-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="deposit status">
+                        <h5>Deposit</h5>
+                        <h2>$00</h2>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="withdraw status">
+                        <h5>Withdraw</h5>
+                        <h2>$00</h2>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="balance status">
+                        <h5>Balance</h5>
+                        <h2>$1240</h2>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="submit-area">
+                        <h4>Deposite</h4>
+                        <input type="text" class="form-control" placeholder="Enter deposit amount"><br>
+                        <button id="login-btn" class="btn btn-success">Enter</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="submit-area">
+                        <h4>Withdraw</h4>
+                        <input type="text" class="form-control" placeholder="Enter withdraw amount"><br>
+                        <button id="login-btn" class="btn btn-success">Enter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const login_button = document.getElementById('login-btn');
         login_button.addEventListener("click", function(){
             const login_area = document.getElementById('login-area');
             login_area.style.display = "none";
+            const account_area = document.getElementById("account-area");
+            account_area.style.display = "block";
         })
     </script>
 </body>
