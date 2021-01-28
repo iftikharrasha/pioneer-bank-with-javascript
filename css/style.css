@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+	padding: 100px;
+}
+
+#login-area {
+}
+
+.submit-area {
+	padding: 30px;
+	margin-top: 50px;
+	border-radius: 10px;
+	box-shadow: 5px 5px gray;
+}

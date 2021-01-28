@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pioneer Bank</title>
+    <!-- css links -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="login-area">
+        <h1 class="text-center">Wolcome to Pioneer Bank</h1>
+        <div class="submit-area">
+            <h3>Login</h3>
+            <input type="text" class="form-control" placeholder="Username"><br>
+            <input type="password" name="" id="" class="form-control" placeholder="Password"><br>
+            <button id="login-btn" class="btn btn-success">Enter</button>
+        </div>
+    </div>
+
+    <script>
+        const login_button = document.getElementById('login-btn');
+        login_button.addEventListener("click", function(){
+            console.log("We just clicked");
+        })
+    </script>
+</body>
+</html>
