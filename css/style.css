@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	padding: 100px;
+	padding-top: 100px;
 }
 
 .submit-area {
@@ -10,8 +10,14 @@ body {
 	box-shadow: 5px 5px gray;
 }
 
+#login-area {
+	width: 70%;
+	margin: 0 auto;
+}
+
 #account-area {
 	display: none;
+	margin-top: 5%;
 }
 
 .deposit {
