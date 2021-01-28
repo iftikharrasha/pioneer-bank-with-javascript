@@ -25,7 +25,7 @@
                 <div class="col-md-4">
                     <div class="deposit status">
                         <h5>Deposit</h5>
-                        <h2>$00</h2>
+                        <h2>$ <span id="current-deposite">00</span></h2>
                     </div>
                 </div>
                 
@@ -50,8 +50,8 @@
                 <div class="col-md-6">
                     <div class="submit-area">
                         <h4>Deposite</h4>
-                        <input type="text" class="form-control" placeholder="Enter deposit amount"><br>
-                        <button id="login-btn" class="btn btn-success">Enter</button>
+                        <input id="deposit-amount" type="text" class="form-control" placeholder="Enter deposit amount"><br>
+                        <button id="deposit-btn" class="btn btn-success">Enter</button>
                     </div>
                 </div>
                 
@@ -59,7 +59,7 @@
                     <div class="submit-area">
                         <h4>Withdraw</h4>
                         <input type="text" class="form-control" placeholder="Enter withdraw amount"><br>
-                        <button id="login-btn" class="btn btn-success">Enter</button>
+                        <button id="withdraw-btn" class="btn btn-success">Enter</button>
                     </div>
                 </div>
             </div>
@@ -67,12 +67,30 @@
     </div>
 
     <script>
+        //login button event handler
         const login_button = document.getElementById('login-btn');
         login_button.addEventListener("click", function(){
             const login_area = document.getElementById('login-area');
             login_area.style.display = "none";
             const account_area = document.getElementById("account-area");
             account_area.style.display = "block";
+        })
+
+        //deposit button event handler
+        const deposit_btn = document.getElementById('deposit-btn');
+        deposit_btn.addEventListener('click', function(){
+            const deposit_amount = document.getElementById('deposit-amount').value;
+            const depositStringToInt = parseFloat(deposit_amount);
+
+            //adding old deposite with current
+            const current_deposite = document.getElementById("current-deposite").innerText;
+            const currentStringToInt = parseFloat(current_deposite);
+
+            const totalDeposit = currentStringToInt + depositStringToInt;
+
+            //setting this value in deposite
+            document.getElementById("current-deposite").innerText = totalDeposit;
+            document.getElementById('deposit-amount').value = "";
         })
     </script>
 </body>
