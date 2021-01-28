@@ -22,7 +22,8 @@
     <script>
         const login_button = document.getElementById('login-btn');
         login_button.addEventListener("click", function(){
-            console.log("We just clicked");
+            const login_area = document.getElementById('login-area');
+            login_area.style.display = "none";
         })
     </script>
 </body>
