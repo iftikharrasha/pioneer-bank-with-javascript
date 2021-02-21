@@ -86,12 +86,15 @@
 
             const depositStringToInt = getInputNumb("deposit-amount");
 
-            updateSpanTest("current-deposit", depositStringToInt);
-            updateSpanTest("current-balance", depositStringToInt);
+            if(depositStringToInt<0){
+                alert("Deposite number can not be negative");
+            }else{
+                updateSpanTest("current-deposit", depositStringToInt);
+                updateSpanTest("current-balance", depositStringToInt);
 
-            //setting up the input field blank when clicked
-            document.getElementById('deposit-amount').value = "";
-
+                //setting up the input field blank when clicked
+                document.getElementById('deposit-amount').value = "";
+            }
         })
 
          //withdraw button event handler
@@ -99,10 +102,14 @@
          withdraw_btn.addEventListener('click', function(){
             const withdrawNumb = getInputNumb("withdraw-amount");
 
-            updateSpanTest("current-withdraw", withdrawNumb);
-            updateSpanTest("current-balance", -1 * withdrawNumb);
-            //setting up the input field blank when clicked
-            document.getElementById('withdraw-amount').value = "";
+            if(withdrawNumb<0){
+                alert("Withdraw amount can not be negative");
+            }else{
+                updateSpanTest("current-withdraw", withdrawNumb);
+                updateSpanTest("current-balance", -1 * withdrawNumb);
+                //setting up the input field blank when clicked
+                document.getElementById('withdraw-amount').value = "";
+            }
         })
 
         //function to parse string input to int
